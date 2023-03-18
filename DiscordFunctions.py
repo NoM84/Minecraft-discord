@@ -36,9 +36,9 @@ def MadenKontrol(Token,Kanalid):
 
 def Kazmakontrol(Token,Kanalid):
     header={
-    'Authorization': 'NzE4NDk3Mjg4OTYzNjIwOTA0.GuR_FB.wop1RjuKUfAef4_5oqreaNx5aAIFpAWZOmtZVk'
+    'Authorization': Token
     }
-    r=requests.get(f'https://discord.com/api/v9/channels/1085908186537668608/messages',headers=header)
+    r=requests.get(f'https://discord.com/api/v9/channels/{Kanalid}/messages',headers=header)
     jsonn=json.loads(r.text)
     for deger in jsonn:
         if ('Kazman kırıldı!'in deger['content']):
